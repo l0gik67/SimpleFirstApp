@@ -6,8 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.l0gik67.converter.BirthDateConverter;
 
-import java.time.LocalDate;
 
 @Data
 @NoArgsConstructor
@@ -21,8 +21,8 @@ public class User {
     private String firstname;
     private String lastname;
     @Column(name = "birth_date")
-    private LocalDate birthDate;
-    private Integer age;
+    @Convert(converter = BirthDateConverter.class)
+    private Birthday birthday;
     @Enumerated(EnumType.STRING)
     private Role role;
 }

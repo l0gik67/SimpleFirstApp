@@ -4,6 +4,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Table;
 
 import org.junit.jupiter.api.Test;
+import org.l0gik67.entity.Birthday;
 import org.l0gik67.entity.User;
 
 import java.lang.reflect.Field;
@@ -25,8 +26,7 @@ class HibernateRunnerTest {
                 .username("ivanov@")
                 .firstname("ivan")
                 .lastname("ivanov")
-                .birthDate(LocalDate.of(2000, 01, 01))
-                .age(23)
+                .birthday(new Birthday(LocalDate.of(2000, 01, 01)))
                 .build();
         var sql = """
                   insert into
