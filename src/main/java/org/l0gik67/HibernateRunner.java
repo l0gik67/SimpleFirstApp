@@ -17,7 +17,7 @@ public class HibernateRunner {
         try (var sessionFactory = configuration.buildSessionFactory();
         var session = sessionFactory.openSession()) {
             session.beginTransaction();
-
+            /*-
             session.persist(User.builder()
                     .username("l0gik67")
                     .firstname("vadim")
@@ -25,6 +25,9 @@ public class HibernateRunner {
                     .birthday(new Birthday(LocalDate.of(2006, 12, 25)))
                     .role(Role.ADMIN)
                     .build());
+
+             */
+
 
             session.getTransaction().commit();
         }
